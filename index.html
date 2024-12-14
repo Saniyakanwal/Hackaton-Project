@@ -3,167 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-    <link rel="stylesheet" href="style.css"> 
-</head>
-<body>
-    <div class="container">
-      <div class="top">
-        <div class="img-box">
-            <div class="box">
-                <img src="e-professional-freelancer-muslim-girl-260nw-2423268219.jpg" alt="my pic">
-            </div>
-        </div>
-        <div class="profile-text">
-            <h3>Saniya <br>Kanwal <span><br>
-                Web Developer
-            </span></h3>
-        </div>
-      </div>  
-      <div class="content-box">
-        <div class="leftSide">
-            <h3>Contact Info</h3>
-            <ul>
-                <li>
-                    <span class="icon"><ion-icon
-                         name="call-outline"></ion-icon></span>
-                    <span class="text">+923477212290</span>
-                </li>
-                  <li>
-                    <span class="icon"><ion-icon 
-                        name="mail-outline"></ion-icon>
-                    </span>
-                    <span class="text">kanwal0155@gmail.com</span>
-                </li>
-                  <li>
-                    <span class="icon"><ion-icon
-                         name="location-outline"></ion-icon></span>
-                    <span class="text">karachi,pakistan</span>
-                </li>
-            </ul>
-            <h3>Education</h3>
-            <ul class="Education">
-                <li>
-                    <h5>2022-2024</h5>
-                    <h4>Intermediate in pre-medical</h4>
-                </li>
-                 <li>
-                    <h5>2010-2022-</h5>
-                    <h4>Matriculation in Bio-science</h4>
-                </li>
-            </ul>
-            <h3>Language</h3>
-            <ul class="Language">
-                <li>
-                    <span class="text">English</span>
-                    <span class="percent">
-                        <div style="width: 70%;"></div>
-                    </span>
-                </li>
-                <li>
-                    <span class="text">Urdu</span>
-                    <span class="percent">
-                        <div style="width: 90%;"></div>
-                    </span>
-                </li>
-        </div>
-    
-        <div class="rightSide">
-            <div class="about">
-                <h3>About Me</h3>
-                <p>hello!my self saniya kanwal. Creative and forward-thinking professional. I thrive in dynamic environments that challenge me to grow and improve Known for my adaptability, strong communication, and ability to turn complex problems into actionable plans. <br> excited to take on new projects and contribute to meaningful results that make an impact. Let's connect and explore how we can collaborate to drive success!</p>
-            </div>
-            <div class="Skills">
-            <h3>Skills</h3>
-            
-            <!-- <button onclick="hideshow()">Load More</button> -->
-
-            <div class="box">
-            <h4>HTML</h4>
-            <span class="percent">
-                <div style="width: 50%;"></div>
-            </span>
-            </div>
-            <div class="box">
-                <h4>Typescript</h4>
-                <span class="percent">
-                    <div style="width: 90%;"></div>
-                </span>
-                </div>
-                <div class="box">
-                    <h4>CSS</h4>
-                    <span class="percent">
-                        <div style="width: 40%;"></div>
-                    </span>
-                    </div>
-                    <div class="box">
-                        <h4>Nextjs</h4>
-                        <span class="percent">
-                            <div style="width: 20%;"></div>
-                        </span>
-                        </div>
-           </div>
-          </div>
-      </div>
-    </div>
-    
-    <script src="app.js"></script>
- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
- <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script></script>
-</body>
-</html>
-
-<!-- milestone 3 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Resume</title>
+    <title>static Resume</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
 </head>
 <body>
-<h1>dynamic resume builder</h1>
-    <!-- Form to input details -->
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name">
-        <label for="email">Email:</label>
-        <input type="email" id="email">
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone">
-        <label for="skills">Skills (comma-separated):</label>
-        <textarea id="skills"></textarea>
-        <label for="education">Education:</label>
-        <textarea id="education"></textarea>
-        <label for="experience">Experience:</label>
-        <textarea id="experience"></textarea>
-        <button id="generate-resume">Generate Resume</button>
-    </div>
 
-    <!-- Display generated resume -->
-    <div>
-        <h2>Generated Resume</h2>
-        <div id="resume-output"class = "hidden">
-        <p>Name: <span id="output-name"></span></p>
-        <p>Email: <span id="output-email"></span></p>
-        <p>Phone: <span id="output-phone"></span></p>
-        <h3>Skills</h3>
-        <ul id="output-skills"></ul>
-        <h3>Education</h3>
-        <p id="output-education"></p>
-        <h3>Experience</h3>
-        <p id="output-experience"></p>
-        <!-- milestone 4 -->
-        <button id="edit-resume" class="hidden">Edit</button>
-        <button id="save-resume" class="hidden">Save</button>
-        <button id = "share-resume" class="hidden"></button>
-        <button id="Download resume" class="hidden"></button>
-        <p id="share-link" class="hidden"></p>
-    </div>
+    <!-- milestone 1 -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile-pic">
+                <img src="img.jpeg" alt="Profile Picture">
+            </div>
+            <h2>Saniya Kanwal</h2>
+            <p>front-end developer</p>
+            <hr>
+            <h3> <i class="fas fa-phone"></i> Contact</h3>
+            <ul>
+                <li>  <i class="fas fa-envelope"></i>  kanwal0155@gnail.com</li>
+                <li> <i class="fas fa-phone"></i> +923477212290</li>
+                <li> <i class="fas fa-map-marker-alt"></i>  Karachi,Pakistan</li>
+            </ul>
+            <br>
+            <h3> <i class="fas fa-graduation-cap"></i>  Education</h3>
+            <p>  Matric in bio-science</p>
+            <p>  Inter in Pre-medical</p>
+            </div>
+            <!-- main-content -->
+            <div class="main-content">
+                <h3> <i class="fas fa-user"></i> About Me</h3>
+                
+            <p>"As a proactive Frontend Developer, I thrive on bringing digital ideas to life. With a keen eye for design and a passion for coding, I specialize in creating intuitive, responsive, and visually appealing web experiences.My toolkit includes HTML, CSS, JavaScript, and TypeScript, along with modern libraries like React and Next.js. Driven by curiosity and a commitment to quality, I continuously seek out new skills to elevate my craft. I’m excited to collaborate with innovative teams and contribute to projects that make a real impact."</p>
+            <br>
+            <h3><i class="fas fa-code"></i> Skills</h3>
+                <ul id="skill-section">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Typescript</li>
+                    <li>Next.js</li>
+                </ul>
+                <!-- hide and show skill section -->
+                <button id="toggle-skills">Toogle Skills</button> 
+                <br> <br>
+                <h3> <i class="fas fa-briefcase"></i> Work Experience</h3>
+                <p>currently learning Nextjs and create multiple projects through  HTML,CSS,Typescript & Nextjs </p>
+            </div>    
+            <!-- ------------------------------------------------------------------------------------------------------- -->
 
 
+
+            <!-- milestone 2 -->
+
+            <!-- puplish milestone 1 push on github and deploy on vercel -- -->
+
+            <!-- --------------------------------------------------------------------------------------------------- -->
+
+
+            <!-- Milestone 3 -->
+            
     <script src="app.js"></script>
 </body>
 </html>
-
