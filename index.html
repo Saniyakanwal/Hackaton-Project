@@ -18,25 +18,27 @@
             <div class="profile-pic">
                 <img src="img.jpeg" alt="Profile Picture">
             </div>
-            <h2>Saniya Kanwal</h2>
-            <p>front-end developer</p>
+            <h2 id="user-name">Saniya Kanwal</h2>
+            <p id="user-role">front-end developer</p>
             <hr>
             <h3> <i class="fas fa-phone"></i> Contact</h3>
-            <ul>
+            <ul id="contact-details">
                 <li>  <i class="fas fa-envelope"></i>  kanwal0155@gnail.com</li>
                 <li> <i class="fas fa-phone"></i> +923477212290</li>
                 <li> <i class="fas fa-map-marker-alt"></i>  Karachi,Pakistan</li>
             </ul>
             <br>
             <h3> <i class="fas fa-graduation-cap"></i>  Education</h3>
+            <div id="user-education">
             <p>  Matric in bio-science</p>
             <p>  Inter in Pre-medical</p>
+            </div>
             </div>
             <!-- main-content -->
             <div class="main-content">
                 <h3> <i class="fas fa-user"></i> About Me</h3>
                 
-            <p>"As a proactive Frontend Developer, I thrive on bringing digital ideas to life. With a keen eye for design and a passion for coding, I specialize in creating intuitive, responsive, and visually appealing web experiences.My toolkit includes HTML, CSS, JavaScript, and TypeScript, along with modern libraries like React and Next.js. Driven by curiosity and a commitment to quality, I continuously seek out new skills to elevate my craft. I’m excited to collaborate with innovative teams and contribute to projects that make a real impact."</p>
+            <p id="user-about">"As a proactive Frontend Developer, I thrive on bringing digital ideas to life. With a keen eye for design and a passion for coding, I specialize in creating intuitive, responsive, and visually appealing web experiences.My toolkit includes HTML, CSS, JavaScript, and TypeScript, along with modern libraries like React and Next.js. Driven by curiosity and a commitment to quality, I continuously seek out new skills to elevate my craft. I’m excited to collaborate with innovative teams and contribute to projects that make a real impact."</p>
             <br>
             <h3><i class="fas fa-code"></i> Skills</h3>
                 <ul id="skill-section">
@@ -49,8 +51,8 @@
                 <button id="toggle-skills">Toogle Skills</button> 
                 <br> <br>
                 <h3> <i class="fas fa-briefcase"></i> Work Experience</h3>
-                <p>currently learning Nextjs and create multiple projects through  HTML,CSS,Typescript & Nextjs </p>
-            </div>    
+                <p id="user-experience">currently learning Nextjs and create multiple projects through  HTML,CSS,Typescript & Nextjs </p>
+                   
             <!-- ------------------------------------------------------------------------------------------------------- -->
 
 
@@ -63,6 +65,34 @@
 
 
             <!-- Milestone 3 -->
+             
+
+            <!-- user form -->
+                 <!-- Generate resume button -->
+                 <button id="generate-resume">Generate Resume</button>
+            <form id="resume-form" style="display: none;">
+                <h3>Enter Your Details </h3>
+                <input type="file" id="form-image" accept="image/*" required />
+                <input type="text" id="form-name" placeholder="Name" required />
+                <input type="text" id="form-role" placeholder="Role (e.g., Frontend developer)" required />
+                <input type="email" id="form-email" placeholder="Email" required />
+                <input type="text" id="form-phone" placeholder="Phone-Number" required />
+                <input type="text" id="form-address" placeholder="Address" required />
+                <input type="text" id="form-education" placeholder="Education" required />
+                <textarea id="form-about" placeholder="About Me"></textarea>
+                <input type="text" id="form-skills" placeholder="Skills (comma separated)" required />
+                <textarea id="form-experience" placeholder="Work Experience"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <!-- -------------------------------------------------------------------------------------- -->
+
+            <!-- Milestone 4 -->
+            <div id="resume-url" style="display: none;"></div>
+            <button id="generate-url">Generate Resume URL</button>
+
+
+            </div>
+
             
     <script src="app.js"></script>
 </body>
