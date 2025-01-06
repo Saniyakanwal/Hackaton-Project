@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var generateResumeBtn = document.getElementById('generate-resume');
     var resumeForm = document.getElementById('resume-form');
     var resumeContainer = document.getElementById('resume-container');
+    var generateUrlBtn = document.getElementById('generate-url');
+    var resumeUrlDiv = document.getElementById('resume-url');
     if (skillSection && toggleSkills) {
         toggleSkills.addEventListener('click', function () {
             if (skillSection.style.display === 'none') {
@@ -82,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
         resumeContainer.style.display = 'block';
     });
     // Generate URL logic
-    var generateUrlBtn = document.getElementById('generate-url');
     generateUrlBtn === null || generateUrlBtn === void 0 ? void 0 : generateUrlBtn.addEventListener('click', function () {
         var username = document.getElementById('form-name').value.trim();
         if (username) {
@@ -104,11 +105,18 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Please fill in the resume form first.');
         }
         var uniqueUrl = "".concat(window.location.origin, "/resume/").concat(encodeURIComponent(username));
-        resumeUrlDiv.innerHTML = "\n          <p>Shareable Link: <a href=\"".concat(uniqueUrl, "\" target=\"_blank\">").concat(uniqueUrl, "</a></p>\n          <button id=\"copy-link\">Copy Link</button>");
+        resumeUrlDiv.innerHTML = "\n          <p>Your Resume Link: <a href=\"".concat(uniqueUrl, "\" target=\"_blank\">").concat(uniqueUrl, "</a></p>\n          <button id=\"copy-link\">Copy Link</button>");
+        var pathSegments = window.location.pathname.split('/').filter(Boolean);
+        var userNameFromPath = pathSegments[pathSegments.length - 1];
+        if (userNameFromPath) {
+            // Populate Resume with Username
+            var userNameElement = document.getElementById('user-name');
+            userNameElement.textContent = decodeURIComponent(userNameFromPath);
+            resumeUrlDiv.style.display = 'block';
+        }
         (_a = document.getElementById('copy-link')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', function () {
             navigator.clipboard.writeText(uniqueUrl);
             alert('Link copied to clipboard!');
         });
-        resumeUrlDiv.style.display = 'block';
     }
 });

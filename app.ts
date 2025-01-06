@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const generateResumeBtn = document.getElementById('generate-resume');
   const resumeForm = document.getElementById('resume-form') as HTMLFormElement;
   const resumeContainer = document.getElementById('resume-container') as HTMLElement;
+  const generateUrlBtn = document.getElementById('generate-url');
+  const resumeUrlDiv = document.getElementById('resume-url');
+
 
   if (skillSection && toggleSkills) {
       toggleSkills.addEventListener('click', () => {
@@ -92,41 +95,4 @@ document.addEventListener('DOMContentLoaded', () => {
       resumeForm.style.display = 'none';
       resumeContainer.style.display = 'block';
   });
-
-  // Generate URL logic
-
-  const generateUrlBtn = document.getElementById('generate-url');
-  generateUrlBtn?.addEventListener('click', () => {
-      const username = (document.getElementById('form-name') as HTMLInputElement).value.trim();
-      if (username) {
-        const resumeLink = `index.html?name=${encodeURIComponent(username)}`;
-        alert(`Your Resume Link: ${resumeLink}`); 
-        window.location.href = resumeLink; 
-    } else {
-        alert("Please enter your name to generate the link.");
-    }
-
-      // Call the function to generate the link
-      generateLinkForResume(username);
-  });
-
-  // Function to generate the resume link
-  function generateLinkForResume(username) {
-      const resumeUrlDiv = document.getElementById('resume-url') as HTMLAreaElement;
-      if(!resumeUrlDiv){
-        alert('Please fill in the resume form first.');
-      }
-
-      const uniqueUrl = `${window.location.origin}/resume/${encodeURIComponent(username)}`;
-      resumeUrlDiv.innerHTML = `
-          <p>Shareable Link: <a href="${uniqueUrl}" target="_blank">${uniqueUrl}</a></p>
-          <button id="copy-link">Copy Link</button>`;
-
-      document.getElementById('copy-link')?.addEventListener('click', () => {
-          navigator.clipboard.writeText(uniqueUrl);
-          alert('Link copied to clipboard!');
-      });
-
-      resumeUrlDiv.style.display = 'block';
-  }
-});
+})
