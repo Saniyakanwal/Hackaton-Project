@@ -1,11 +1,12 @@
+declare const html2pdf: any;
+
 document.addEventListener('DOMContentLoaded', () => {
   const skillSection = document.getElementById('skill-section');
   const toggleSkills = document.getElementById('toggle-skills');
   const generateResumeBtn = document.getElementById('generate-resume');
   const resumeForm = document.getElementById('resume-form') as HTMLFormElement;
   const resumeContainer = document.getElementById('resume-container') as HTMLElement;
-  const generateUrlBtn = document.getElementById('generate-url');
-  const resumeUrlDiv = document.getElementById('resume-url');
+  const generatePdfBtn = document.getElementById('generate-pdf');
 
 
   if (skillSection && toggleSkills) {
@@ -94,5 +95,26 @@ document.addEventListener('DOMContentLoaded', () => {
       // Hide form
       resumeForm.style.display = 'none';
       resumeContainer.style.display = 'block';
+
+});
+
+    // Generate PDF of the resume
+    generatePdfBtn?.addEventListener('click', () => {
+        const resumeContent = document.querySelector('.container') as HTMLElement;
+        const buttons = document.querySelectorAll('.main-content button');
+        buttons.forEach((button) => {
+            (button as HTMLButtonElement).setAttribute('hidden', 'true'); // Hides the button during PDF generation
+        });
+        const opt = {
+            margin: [10, 10, 10, 10], // Top, Right, Bottom, Left margins (in mm)
+            filename: 'resume.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 }, // Improves resolution
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        };
+        html2pdf().set(opt).from(resumeContent).save('resume.pdf');
+        buttons.forEach((button) => {
+            (button as HTMLButtonElement).style.display = 'none'; // Makes buttons hidden permanently
+        });
+    });
   });
-})
